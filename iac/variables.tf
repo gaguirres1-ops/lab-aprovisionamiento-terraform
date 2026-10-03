@@ -4,8 +4,8 @@ variable "frontend_port" {
 }
 
 variable "backend_port" {
-  type        = number
-  description = "Puerto del backend"
+  type        = map(number)
+  description = "Puertos del backend por ambiente"
 }
 
 variable "db_port" {
@@ -24,12 +24,7 @@ variable "postgres_password" {
   sensitive   = true
 }
 
-variable "backend_port" {
-  type        = map(number)
-  description = "Puerto externo de la primera réplica del backend por ambiente"
-}
-
 variable "backend_replicas" {
   type        = map(number)
-  description = "Cantidad de réplicas del backend por ambiente"
+  description = "Cantidad de replicas del backend por ambiente"
 }
